@@ -45,11 +45,11 @@ public class App {
                 employee.increaseSalary(perc);
             }
             System.out.println(employee.getId()
-                + ", "
-                + employee.getName()
-                + ", "
-                + employee.getSalario()
-            );
+                    + ", "
+                    + employee.getName()
+                    + ", "
+                    + employee.getSalario());
         }
+        sc.close();
     }
 }
