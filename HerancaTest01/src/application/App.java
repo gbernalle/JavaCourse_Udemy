@@ -1,5 +1,8 @@
 package application;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import entities.Account;
 import entities.BusinessAccount;
 import entities.SavingsAccount;
@@ -41,9 +44,9 @@ public class App {
             System.out.println("Update!");
         }
 
-        Account sobreTest1 = new Account(1006, "Sandro", 1000.0);
-        sobreTest1.withdraw(200.0);
-        System.out.println(sobreTest1.getBalance());
+        // Account sobreTest1 = new Account(1006, "Sandro", 1000.0);
+        // sobreTest1.withdraw(200.0);
+        // System.out.println(sobreTest1.getBalance()); // Account agora é abstrata
 
         Account sobreTest2 = new SavingsAccount(1007, "Shiely", 1000.0, 0.01);
         sobreTest2.withdraw(200.0);
@@ -52,5 +55,29 @@ public class App {
         Account sobreTest3 = new BusinessAccount(1008, "Jaspion", 1000.0, 500.0);
         sobreTest3.withdraw(200.0);
         System.out.println(sobreTest3.getBalance());
+
+        List<Account> list = new ArrayList<>();
+        list.add(acc1);
+        list.add(acc2);
+        list.add(acc3);
+        list.add(sobreTest2);
+        list.add(sobreTest3);
+
+        for (Account acc : list) {
+            System.out.printf("Updated balance for account %d: %.2f\n",
+                    acc.getNumber(),
+                    acc.getBalance());
+        }
+        
+        for (Account acc : list) {
+            acc.deposit(10);
+        }
+        
+        double sum = 0.0;
+        for (Account acc : list) {
+            sum += acc.getBalance();
+        }
+
+        System.out.printf("Total balance: %.2f%n", sum);
     }
 }

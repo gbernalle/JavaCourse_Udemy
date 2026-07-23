@@ -1,6 +1,6 @@
 package entities;
 
-public class Account {
+public abstract class Account {
 
   private Integer number;
   private String holder;
@@ -36,7 +36,7 @@ public class Account {
   }
 
   @Override
-  public String toString() {
+  public final String toString() {
     return "{" +
       " number='" + getNumber() + "'" +
       ", holder='" + getHolder() + "'" +
