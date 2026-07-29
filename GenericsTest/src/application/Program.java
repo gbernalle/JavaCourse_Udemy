@@ -14,6 +14,7 @@ public class Program {
     List<? extends Number> list = intList; // qualquer tipo que seja subtipo de Number
 
     Number x = list.get(0);
+    System.out.println(x);
     // list.add(20); // Erro, covariância
     
     //  get - ERROR
@@ -50,7 +51,7 @@ public class Program {
     }
   }
 
-  public static void printList(List<?> list){
+  public static void printList(List<?> list) {
     for (Object obj : list) {
       System.out.print(obj + " ");
     }
